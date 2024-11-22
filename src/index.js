@@ -18,9 +18,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/user", userRouter);
 app.use("/task", taskRouter);
 
-app.get("/usertoken", (req, res) => {
-  let user = req.user;
-  res.json({ message: "User Token", user });
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Welcome To Task Management App" });
 });
 app.listen(Port, () => {
   console.log("Listening....");
