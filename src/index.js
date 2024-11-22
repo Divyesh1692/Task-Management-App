@@ -8,7 +8,7 @@ const connectDB = require("./config/db");
 const taskRouter = require("./routes/taskRoutes");
 const cors = require("cors");
 const app = express();
-const Port = process.env.PORT || 5000;
+const Port = process.env.PORT;
 
 app.use(
   cors({
@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
   res.status(200).json({ message: "Welcome To Task Management App" });
 });
 app.listen(Port, () => {
-  console.log("Listening....");
+  console.log("Listening...." + Port);
   connectDB();
 });
 
