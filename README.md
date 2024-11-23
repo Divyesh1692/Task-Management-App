@@ -241,6 +241,7 @@ Follow these steps to deploy your **Task Management App** on Vercel:
 #### **5. Test Your App**
 
 - Open the Vercel URL in a browser or test endpoints using tools like **Postman** or **ThunderClient**.
+- my vercel url - https://task-management-app-ev39-2j15d5v5w-divyeshs-projects-75ac8dfe.vercel.app/
 
 ---
 

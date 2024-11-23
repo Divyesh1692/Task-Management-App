@@ -25,7 +25,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/user", userRouter);
 app.use("/task", taskRouter);
 
-app.listen(Port, () => {
-  console.log("Listening....");
-  connectDB();
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => {
+    console.error("MongoDB connection error:", err);
+    process.exit(1); // Exit process with failure
+  });
+
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Welcome To Task Management App" });
 });
+
+module.exports = app;
