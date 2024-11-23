@@ -1,24 +1,19 @@
 const express = require("express");
-require("dotenv").config({ path: "../.env" });
-require("dotenv").config();
-const userRouter = require("./routes/userRoutes");
+const userRouter = require("./src/routes/userRoutes");
 const cookieParser = require("cookie-parser");
 const helmet = require("helmet");
-const connectDB = require("./config/db");
-const taskRouter = require("./routes/taskRoutes");
-const cors = require("cors");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const taskRouter = require("./src/routes/taskRoutes");
+require("dotenv").config();
 const app = express();
-const Port = process.env.PORT || 5002;
+const cors = require("cors");
 
-app.use(
-  cors({
-    origin: "*",
-    methods: ["GET", "POST", "PATCH", "DELETE"],
-  })
-);
+app.use(cors());
 
 app.use(helmet());
 app.use(cookieParser());
+app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -30,7 +25,7 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => {
     console.error("MongoDB connection error:", err);
-    process.exit(1); // Exit process with failure
+    process.exit(1);
   });
 
 app.get("/", (req, res) => {
