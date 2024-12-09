@@ -1,10 +1,10 @@
-Here's a comprehensive **README.md** file for your Task Management App:
-
----
-
 # **Task Management App**
 
 A Role-Based Task Management application with features like user authentication, task management, and role-based access control. This project is built using Node.js, Express, MongoDB, and other modern technologies.
+
+## My Vercel Url
+
+https://task-management-app-ev39-2j15d5v5w-divyeshs-projects-75ac8dfe.vercel.app/
 
 ## **Key Features**
 
@@ -241,7 +241,6 @@ Follow these steps to deploy your **Task Management App** on Vercel:
 #### **5. Test Your App**
 
 - Open the Vercel URL in a browser or test endpoints using tools like **Postman** or **ThunderClient**.
-- my vercel url - https://task-management-app-ev39-2j15d5v5w-divyeshs-projects-75ac8dfe.vercel.app/
 
 ---
 
